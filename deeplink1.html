@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Redirecting...</title>
-    <meta charset="UTF-8" />
+   <meta http-equiv="refresh" content="1;url=zumigo://pet/home" />
     <script type="text/javascript">
       // First redirect to AutoService
       window.location.href = "myapp://auto-service";
@@ -14,7 +14,7 @@
 
       // Fallback to Play Store if the app is not installed
       setTimeout(() => {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.yourapp";
+        window.location.href = "https://zumigo.pet/home/index";
       }, 4000);
     </script>
   </head>
