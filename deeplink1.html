@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Redirecting...</title>
-  <meta charset="UTF-8" />
-  <script type="text/javascript">
-    window.location.href = "myapp://auto-service";
-    setTimeout(() => {
-      window.location.href = "https://play.google.com/store/apps/details?id=com.yourapp"; // fallback
-    }, 2000);
-  </script>
-</head>
-<body>
-  <p>If you're not redirected, <a href="myapp://auto-service">click here</a>.</p>
-</body>
+  <head>
+    <title>Redirecting...</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+      // First redirect to AutoService
+      window.location.href = "myapp://auto-service";
+
+      // After 2 seconds, redirect to the Registration page
+      setTimeout(() => {
+        window.location.href = "myapp://register"; // Redirect to Registration page after AutoService
+      }, 2000);
+
+      // Fallback to Play Store if the app is not installed
+      setTimeout(() => {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.yourapp";
+      }, 4000);
+    </script>
+  </head>
+  <body>
+    <p>If you're not redirected, <a href="myapp://auto-service">click here</a> to go to AutoService, or <a href="myapp://register">click here</a> to go to Registration.</p>
+  </body>
 </html>
+
