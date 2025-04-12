@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Redirecting...</title>
@@ -22,4 +22,28 @@
     <p>If you're not redirected, <a href="myapp://auto-service">click here</a> to go to AutoService, or <a href="myapp://register">click here</a> to go to Registration.</p>
   </body>
 </html>
+ -->
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting to App...</title>
+  <script type="text/javascript">
+    window.onload = function () {
+      var now = new Date().getTime();
+      setTimeout(function () {
+        if (new Date().getTime() - now < 1200) {
+          // App did not open, fallback to website
+          window.location.href = 'https://zumigo.pet/home/index';
+        }
+      }, 1000);
+
+      // Try to open the app
+      window.location.href = 'myapp://auto-service';
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
